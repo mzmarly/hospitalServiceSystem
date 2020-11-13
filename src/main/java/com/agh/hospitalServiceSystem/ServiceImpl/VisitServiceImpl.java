@@ -23,7 +23,7 @@ public class VisitServiceImpl implements VisitService{
 
     @Autowired
     private VisitDao visitDao;
-    
+
     @Override
     public Long create(Visit visit) {
         return visitDao.create(visit);
@@ -48,6 +48,7 @@ public class VisitServiceImpl implements VisitService{
     public void removeVisit(Long id) {
         visitDao.removeVisit(id);
     }
-    
-    
+
+    @Override
+    public void takePart(Long id){}
 }

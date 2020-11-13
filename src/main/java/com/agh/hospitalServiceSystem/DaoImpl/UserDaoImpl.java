@@ -15,6 +15,8 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
+import com.agh.hospitalServiceSystem.Model.Visit;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -26,7 +28,7 @@ public class UserDaoImpl implements UserDao{
 
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     @Override
     public Long create(User user) {
         entityManager.persist(user);
@@ -36,7 +38,7 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public void update(User user) {
-       entityManager.merge(user);
+        entityManager.merge(user);
     }
 
     @Override
@@ -51,12 +53,19 @@ public class UserDaoImpl implements UserDao{
         CriteriaQuery<User> cq=cb.createQuery(User.class);
         Root<User> rootEntry=cq.from(User.class);
         CriteriaQuery<User> all=cq.select(rootEntry);
-        
+
         TypedQuery<User> allQuery=entityManager.createQuery(all);
         users.addAll(allQuery.getResultList());
-        
+
         return users;
     }
-    
-    
+
+    @Override
+    public void removeUser(Long id) {
+        User u=getUserById(id);
+        if(u!=null){
+            entityManager.remove(u);
+        }
+    }
+
 }

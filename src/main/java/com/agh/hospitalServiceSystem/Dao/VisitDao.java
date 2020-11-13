@@ -11,17 +11,20 @@ import java.util.List;
 /**
  *
  * @author Wiktor
+ * @author Michal
  */
 public interface VisitDao {
-        
+
     Long create(Visit visit);
-    
+
     void update(Visit visit);
-    
+
     Visit getVisitById(Long id);
-    
-    List<Visit> getVisits();  
-    
+
+    List<Visit> getVisits();
+
     void removeVisit(Long id);
+
+    void lala();
 }
 

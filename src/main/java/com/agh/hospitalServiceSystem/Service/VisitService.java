@@ -13,14 +13,16 @@ import java.util.List;
  * @author Wiktor
  */
 public interface VisitService {
-    
+
     Long create(Visit visit);
-    
+
     void update(Visit visit);
-    
+
     Visit getVisitById(Long id);
-    
-    List<Visit> getVisits();  
-    
+
+    List<Visit> getVisits();
+
     void removeVisit(Long id);
+
+    void takePart(Long id);
 }

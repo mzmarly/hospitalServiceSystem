@@ -5,14 +5,13 @@
  */
 package com.agh.hospitalServiceSystem.Model;
 
-import javax.persistence.Column;
+import javax.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 import static javax.persistence.EnumType.STRING;
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 
 /**
@@ -22,25 +21,34 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Users")
 public class User{
-        @Id
-	@Column(name="user_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-        
-	@Column
-	private String firstName;
-        
-	@Column
-	private String lastName;
-        
-	@Column
-	private String email;
-        
-	@Column
-	private String password;
-        
-        @Enumerated(STRING)
-        private UserType userType;
+    @Id
+    @Column(name="user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
+    private String firstName;
+
+    @Column
+    private String lastName;
+
+    @Column
+    private String email;
+
+    @Column
+    private String password;
+
+    @Enumerated(STRING)
+    private UserType userType;
+
+    @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL,  fetch = FetchType.EAGER)
+    List<Visit> visits=new ArrayList<>();
+
+    @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    List<Visit> visit=new ArrayList<>();
+
+
+
 
     /**
      * @return the id
@@ -127,13 +135,30 @@ public class User{
     }
 
     public User() {
-        this.firstName = "";
-        this.lastName = "";
-        this.email = "";
-        this.password = "";
-        this.userType = null;
+//        this.firstName = "";
+//        this.lastName = "";
+//        this.email = "";
+//        this.password = "";
+//        this.userType = null;
     }
-    
+
+
+    public List<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
+    }
+
+    public List<Visit> getVisit() {
+        return visit;
+    }
+
+    public void setVisit(List<Visit> visit) {
+        this.visit = visit;
+    }
+
     public User(String firstName, String lastName, String email, String password, UserType userType) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -141,6 +166,12 @@ public class User{
         this.password = password;
         this.userType = userType;
     }
-        
-    
+
+    public static User fromId(long id) {
+        User user = new User();
+        user.setId(id);
+        return user;
+    }
+
+
 }

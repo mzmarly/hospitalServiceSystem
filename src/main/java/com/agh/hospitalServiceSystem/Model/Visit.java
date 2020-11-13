@@ -5,52 +5,60 @@
  */
 package com.agh.hospitalServiceSystem.Model;
 
+import com.fasterxml.jackson.annotation.*;
+
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import static javax.persistence.EnumType.STRING;
 
 /**
- *
  * @author Wiktor
  */
 
 @Entity
-@Table(name="Visits")
-public class Visit{
-        @Id
-	@Column
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-        
-        @Column
-        private Date dateOfVisit;
-        
-        @ManyToOne
-        @JoinColumn(name="user_id",insertable=false, updatable=false)
-        private User patient;
-        
-        @ManyToOne
-        @JoinColumn(name="user_id",insertable=false, updatable=false)
-        private User doctor;
+@Table(name = "Visits")
+public class Visit {
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-      
+    @Column(nullable = false)
+    private Date dateOfVisit;
+
+    @Enumerated(STRING)
+    private Status status;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    @JsonProperty("patient_id")
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    private User patient;
+
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    @JsonProperty("doctor_id")
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    private User doctor;
+
+
+
     public Visit() {
         this.dateOfVisit = null;
         this.patient = null;
         this.doctor = null;
+        this.status = null;
     }
-    
-    public Visit(Date dateOfVisit) {
+
+    public Visit(Date dateOfVisit,Status status, User patient, User doctor) {
         this.dateOfVisit = dateOfVisit;
         this.patient = patient;
         this.doctor = doctor;
+        this.status = status;
     }
 
     public Long getId() {
@@ -72,19 +80,25 @@ public class Visit{
     public User getPatient() {
         return patient;
     }
-
-    public void setPatient(User patient) {
-        this.patient = patient;
+    @JsonProperty("patient_id")
+    public void setPatient(long id) {
+        this.patient = User.fromId(id);
     }
 
     public User getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(User doctor) {
-        this.doctor = doctor;
+    @JsonProperty("doctor_id")
+    public void setDoctor(long id) {
+        this.doctor = User.fromId(id);
     }
-        
-        
-        
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

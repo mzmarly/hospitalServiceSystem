@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserDao userDao;
-    
+
     @Override
     public Long create(User user) {
         return userDao.create(user);
@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService{
     public List<User> getUsers() {
         return userDao.getUsers();
     }
-    
-    
+    @Override
+    public void removeUser(Long id){userDao.removeUser(id);}
+
 }

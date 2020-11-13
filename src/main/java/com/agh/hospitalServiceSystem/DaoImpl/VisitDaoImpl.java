@@ -15,6 +15,8 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -26,7 +28,7 @@ public class VisitDaoImpl implements VisitDao{
 
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     @Override
     public Long create(Visit visit) {
         entityManager.persist(visit);
@@ -41,7 +43,7 @@ public class VisitDaoImpl implements VisitDao{
 
     @Override
     public Visit getVisitById(Long id) {
-       return entityManager.find(Visit.class, id);
+        return entityManager.find(Visit.class, id);
     }
 
     @Override
@@ -51,10 +53,10 @@ public class VisitDaoImpl implements VisitDao{
         CriteriaQuery<Visit> cq=cb.createQuery(Visit.class);
         Root<Visit> rootEntry=cq.from(Visit.class);
         CriteriaQuery<Visit> all=cq.select(rootEntry);
-        
+
         TypedQuery<Visit> allQuery=entityManager.createQuery(all);
         visit.addAll(allQuery.getResultList());
-        
+
         return visit;
     }
 
@@ -65,6 +67,12 @@ public class VisitDaoImpl implements VisitDao{
             entityManager.remove(v);
         }
     }
-    
-    
+
+    @Override
+    @Query(value = "", nativeQuery = true)
+    public void lala() {
+
+    }
+
+
 }

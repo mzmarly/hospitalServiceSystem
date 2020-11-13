@@ -11,14 +11,17 @@ import java.util.List;
 /**
  *
  * @author Wiktor
+ * @author Michal
  */
 public interface UserDao {
-    
+
     Long create(User user);
-    
+
     void update(User user);
-    
+
     User getUserById(Long id);
-    
-    List<User> getUsers();  
+
+    List<User> getUsers();
+
+    void removeUser(Long id);
 }
