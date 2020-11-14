@@ -5,7 +5,9 @@
  */
 package com.agh.hospitalServiceSystem.ServiceImpl;
 
+import com.agh.hospitalServiceSystem.Dao.DiagnosisDao;
 import com.agh.hospitalServiceSystem.Dao.VisitDao;
+import com.agh.hospitalServiceSystem.Model.Diagnosis;
 import com.agh.hospitalServiceSystem.Model.Visit;
 import com.agh.hospitalServiceSystem.Service.VisitService;
 import java.util.List;
@@ -19,11 +21,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Transactional
-public class VisitServiceImpl implements VisitService{
+public class VisitServiceImpl implements VisitService {
 
     @Autowired
     private VisitDao visitDao;
-
+    @Autowired
+    private DiagnosisDao diagnosisDao;
     @Override
     public Long create(Visit visit) {
         return visitDao.create(visit);
@@ -50,5 +53,13 @@ public class VisitServiceImpl implements VisitService{
     }
 
     @Override
-    public void takePart(Long id){}
+    public void getReservation(Long id, Long id_patient) {
+        visitDao.getReservation(id, id_patient);
+    }
+
+    @Override
+    public void afterVisit(Diagnosis diagnosis, long id) {
+        diagnosisDao.create(diagnosis);
+        visitDao.afterVisit(diagnosis, id);
+    }
 }

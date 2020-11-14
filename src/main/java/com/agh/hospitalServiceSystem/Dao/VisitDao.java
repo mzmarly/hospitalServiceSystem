@@ -5,6 +5,7 @@
  */
 package com.agh.hospitalServiceSystem.Dao;
 
+import com.agh.hospitalServiceSystem.Model.Diagnosis;
 import com.agh.hospitalServiceSystem.Model.Visit;
 import java.util.List;
 
@@ -25,6 +26,8 @@ public interface VisitDao {
 
     void removeVisit(Long id);
 
-    void lala();
+    void getReservation(Long id,Long id_patient);
+
+    void afterVisit(Diagnosis diagnosis, long id);
 }
 

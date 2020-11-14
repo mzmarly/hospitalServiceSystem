@@ -6,6 +6,8 @@
 package com.agh.hospitalServiceSystem.DaoImpl;
 
 import com.agh.hospitalServiceSystem.Dao.VisitDao;
+import com.agh.hospitalServiceSystem.Model.Diagnosis;
+import com.agh.hospitalServiceSystem.Model.Status;
 import com.agh.hospitalServiceSystem.Model.Visit;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,10 +71,20 @@ public class VisitDaoImpl implements VisitDao{
     }
 
     @Override
-    @Query(value = "", nativeQuery = true)
-    public void lala() {
+    public  void getReservation(Long id,Long id_patient) {
 
+        Visit h = entityManager.find(Visit.class,  id);
+        h.setStatus(Status.RESERVED);
+        h.setPatient(id_patient);
+        System.out.println(h.getId());
+    }
+
+    @Override
+    public void afterVisit(Diagnosis diagnosis, long id) {
+        Visit h = entityManager.find(Visit.class, id);
+        h.setStatus(Status.DONE);
+        diagnosis.setVisit_id(id);
+    }
     }
 
 
-}

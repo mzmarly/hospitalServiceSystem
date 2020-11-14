@@ -5,6 +5,7 @@
  */
 package com.agh.hospitalServiceSystem.Service;
 
+import com.agh.hospitalServiceSystem.Model.Diagnosis;
 import com.agh.hospitalServiceSystem.Model.Visit;
 import java.util.List;
 
@@ -24,5 +25,8 @@ public interface VisitService {
 
     void removeVisit(Long id);
 
-    void takePart(Long id);
+    void getReservation(Long id,Long id_patient);
+
+    void afterVisit(Diagnosis diagnosis, long id);
+
 }
