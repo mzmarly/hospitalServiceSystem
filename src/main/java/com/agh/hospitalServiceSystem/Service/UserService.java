@@ -21,5 +21,10 @@ public interface UserService {
     User getUserById(Long id);
 
     List<User> getUsers();
+    
     void removeUser(Long id);
+    
+    List<User> getPatients();
+    
+    List<User> getDoctors();
 }

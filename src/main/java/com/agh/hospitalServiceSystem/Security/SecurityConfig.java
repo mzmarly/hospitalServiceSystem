@@ -13,7 +13,5 @@ import org.springframework.context.annotation.Configuration;
  * @author Wiktor
  */
 //@Configuration
-//@EnableWebSecurity
-public class SecurityConfig //extends WebSecurityConfigurerAdapter{
-{
-}
+public class SecurityConfig  //WebSecurityConfigurerAdapter{
+{}

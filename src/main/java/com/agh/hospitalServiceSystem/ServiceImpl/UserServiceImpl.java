@@ -7,7 +7,9 @@ package com.agh.hospitalServiceSystem.ServiceImpl;
 
 import com.agh.hospitalServiceSystem.Dao.UserDao;
 import com.agh.hospitalServiceSystem.Model.User;
+import com.agh.hospitalServiceSystem.Model.UserType;
 import com.agh.hospitalServiceSystem.Service.UserService;
+import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +45,34 @@ public class UserServiceImpl implements UserService{
     public List<User> getUsers() {
         return userDao.getUsers();
     }
+    
     @Override
-    public void removeUser(Long id){userDao.removeUser(id);}
+    public void removeUser(Long id){
+        userDao.removeUser(id);
+    }
+    
+    @Override
+    public List<User> getPatients() {
+        List<User> patients=new ArrayList<>();
+        List<User> all=userDao.getUsers();
+        for(User u:all){
+            if(u.getUserType().equals(UserType.PATIENT)){
+                patients.add(u);
+            }
+        }
+        return patients;
+    }
+    
+    @Override
+    public List<User> getDoctors() {
+        List<User> patients=new ArrayList<>();
+        List<User> all=userDao.getUsers();
+        for(User u:all){
+            if(u.getUserType().equals(UserType.DOCTOR)){
+                patients.add(u);
+            }
+        }
+        return patients;
+    }
 
 }

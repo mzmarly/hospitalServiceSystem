@@ -6,19 +6,13 @@
 package com.agh.hospitalServiceSystem.Controller;
 
 
-import com.agh.hospitalServiceSystem.Model.Status;
 import com.agh.hospitalServiceSystem.Model.User;
-import com.agh.hospitalServiceSystem.Model.UserType;
-import com.agh.hospitalServiceSystem.Model.Visit;
-
-import java.awt.*;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import com.agh.hospitalServiceSystem.Service.UserService;
-import com.agh.hospitalServiceSystem.Service.VisitService;
+import org.springframework.ui.ModelMap;
 
 @RestController
 public class UserController {
@@ -40,7 +34,19 @@ public class UserController {
     }
     @DeleteMapping("/removeUser")
     public void removeUser(@PathVariable(value = "id") long id) {
-
         userService.removeUser(id);
     }
+    
+    @GetMapping("/patients")
+    public List<User> getPatients(){
+        return userService.getPatients();
+    }
+    
+    @GetMapping("/doctors")
+    public List<User> getDoctors(ModelMap model){
+       //String name = (String) model.get("name");
+        //model.put("doctors", userService.getDoctors());
+        return userService.getDoctors();
+    }
+    
 }

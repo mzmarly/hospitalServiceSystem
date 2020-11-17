@@ -26,6 +26,7 @@ public class Diagnosis {
 
     public Diagnosis() {
     }
+    
     @Column
     private String disease;
 
