@@ -9,13 +9,13 @@ Konto doktora oferuje dodawanie wizyt, przekładanie ich oraz uzupełnianie diag
 | Michał Zmarły       | WIMiIP  | IS       |   5     | 5     | 2019/2020      |
 
 ## Diagram przypadków użycia 
-![screenshot](/resources/useCase.jpg)
+![screenshot](/sources/useCase.jpg)
 
 ## Diagram klas
-![screenshot](/resources/diagramKlas.jpg)
+![screenshot](/sources/diagramKlas.jpg)
 
 
 ## Diagram sekwencji
-![screenshot](/resources/diagramSekwencji.jpg)
+![screenshot](/sources/diagramSekwencji.jpg)
 
 ## Aplikacja
