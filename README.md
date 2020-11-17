@@ -19,3 +19,6 @@ Konto doktora oferuje dodawanie wizyt, przekładanie ich oraz uzupełnianie diag
 ![screenshot](/sources/diagramSekwencji.jpg)
 
 ## Aplikacja
+Aplikacja napisana w języku programowania Java.<br />
+Baza danych oparta na H2 obsługiwana prze hiberneta.<br />
+Aplikacja webowa z frontendem opartym na jsp przy użyciu spring framework. 
