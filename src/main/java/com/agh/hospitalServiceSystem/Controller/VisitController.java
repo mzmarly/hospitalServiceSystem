@@ -77,7 +77,6 @@ public class VisitController {
     public void afterVisit(@RequestBody Diagnosis diagnosis, @PathVariable long id) {
         diagnosisService.create(diagnosis);
         visitService.afterVisit(diagnosis, id);
-
     }
 
     @GetMapping("/visits")

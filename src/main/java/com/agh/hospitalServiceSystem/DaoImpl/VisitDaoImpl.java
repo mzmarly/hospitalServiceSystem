@@ -81,10 +81,15 @@ public class VisitDaoImpl implements VisitDao{
 
     @Override
     public void afterVisit(Diagnosis diagnosis, long id) {
-        Visit h = entityManager.find(Visit.class, id);
-        h.setStatus(Status.DONE);
-        diagnosis.setVisit_id(id);
+
     }
+
+//    @Override
+//    public void afterVisit(Diagnosis diagnosis, long id) {
+//        Visit h = entityManager.find(Visit.class, id);
+//        h.setStatus(Status.DONE);
+//        diagnosis.setVisit_id(id);
+//    }
     }
 
 

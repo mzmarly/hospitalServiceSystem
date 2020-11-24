@@ -39,7 +39,7 @@
         <div class="row">
         <h1 class="col-md-12 offset-top-12 offset-xs-top-0 intro-header">Znajdz lekarza i umow wizyte</h1>
         <h2 class="col-md-12 offset-top-3 offset-bottom-0 h3 intro-header">Szukaj wsrod najlepszych specjalistow.</h2>
-        <p><img class="n3VNCb" style="width: 900px; height: 600px; margin: 0px auto; display: block;" src="https://interpolska.pl/wp-content/uploads/2019/02/lekarzewpolityce-2.jpg" alt="OtoLekarz. Sto lat lekarzy w polityce - TU INTER Polska" data-iml="3924" /></p>
+        <p><img class="n3VNCb" style="width: 800px; height: 500px; margin: 0px auto; display: block;" src="https://interpolska.pl/wp-content/uploads/2019/02/lekarzewpolityce-2.jpg" alt="OtoLekarz. Sto lat lekarzy w polityce - TU INTER Polska" data-iml="3924" /></p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
 
