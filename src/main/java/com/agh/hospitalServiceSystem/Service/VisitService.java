@@ -30,4 +30,6 @@ public interface VisitService {
     void afterVisit(Diagnosis diagnosis, long id);
 
     List<Visit> getAvaiable();
+    
+    List<Visit> getVisitByPatientId(Long id);
 }

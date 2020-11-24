@@ -16,7 +16,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -26,10 +25,13 @@
         <a class="nav-link" href="/doctors">Doctors</a>
       </li>
     <li class="nav-item active">
-    <a class="nav-link" href="/visits">Visits</a>
+    <a class="nav-link" href="/visits/1">Visits</a>
     </li>
     <li class="nav-item active">
     <a class="nav-link" href="/diagnosis/1">Diagnosis</a>
+    </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="/users/1">My account</a>
     </li>
     </ul>
   </div>

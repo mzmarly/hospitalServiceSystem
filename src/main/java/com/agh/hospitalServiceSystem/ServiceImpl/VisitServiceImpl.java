@@ -78,5 +78,21 @@ public class VisitServiceImpl implements VisitService {
         }
         return visit;
     }
+    
+    public List<Visit> getVisitByPatientId(Long id){
+        List<Visit> patientVisits=new ArrayList();
+        List<Visit> allVisits=getVisits();
+        if(allVisits!=null){
+            for(Visit v:allVisits){
+                if(v.getPatient()!=null){
+                    if(v.getPatient().getId()==id){
+                        patientVisits.add(v);
+                    }
+                }
+            }
+        }
+        return patientVisits;
     }
+    
+}
 

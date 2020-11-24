@@ -34,27 +34,17 @@ public class VisitController {
     private VisitService visitService;
     @Autowired
     private DiagnosisService diagnosisService;
-    @Autowired
-    private UserService userService;
 
-//    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE, value = "/addVisit/{doctor_id}")///{patient_id}
-//    public Long addVisit(@RequestBody Visit visit) {
-//
-//        return visitService.create(visit);
-//    }
+
     @PostMapping("/addVisits")
     public Long addVisit(@RequestBody Visit visit) {
         return visitService.create(visit);
     }
 
-//    @GetMapping("/getVisits")
-//    public List<Visit> getVisits() {
-//        return visitService.getVisits();
-//    }
-
-    @GetMapping("/getVisit/{id}")
-    public Visit getVisit(@PathVariable(value = "id") long id) {
-        return visitService.getVisitById(id);
+    @GetMapping("/visits/{id}")
+    public String getPatientVisits(@PathVariable(value = "id") long id,Model model) {
+        model.addAttribute("listofvisits",visitService.getVisitByPatientId(id));
+        return "visits";
     }
 
     @PatchMapping("/updateVisit")
@@ -64,7 +54,6 @@ public class VisitController {
 
     @DeleteMapping("/removeVisit")
     public void removeVisit(@PathVariable(value = "id") long id) {
-
         visitService.removeVisit(id);
     }
 
@@ -86,8 +75,14 @@ public class VisitController {
     }
 
     @GetMapping("/home")
-    public String nic(Model model){
+    public String homePage(Model model){
         return "home";
+    }
+    
+    @GetMapping("/doctor/{doctorId}/setvisit")
+    public String setVisit(@PathVariable long doctorId,Model model){
+        model.addAttribute("listofvisits", visitService.getAvaiable());
+        return "setVisit";
     }
 
 

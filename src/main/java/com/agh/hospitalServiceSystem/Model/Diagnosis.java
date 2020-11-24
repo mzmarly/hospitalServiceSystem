@@ -29,6 +29,19 @@ public class Diagnosis {
     
     @Column
     private String disease;
+    
+    @Column
+    private String recommendations;
+
+    @Column
+    private int prescription;
+
+    @Column
+    private Long doctor;
+
+    @Column
+    private Long user_id;
+        
 
     public Long getId() {
         return id;
@@ -70,15 +83,6 @@ public class Diagnosis {
         this.doctor = doctor;
     }
 
-    @Column
-    private String recommendations;
-
-    @Column
-    private int prescription;
-
-    @Column
-    private Long doctor;
-
     public Long getUser_id() {
         return user_id;
     }
@@ -87,8 +91,6 @@ public class Diagnosis {
         this.user_id = visit_id;
     }
 
-    @Column
-    private Long user_id;
 }
 
 

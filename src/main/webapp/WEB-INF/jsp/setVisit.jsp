@@ -1,15 +1,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+            <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <!DOCTYPE html>
         <html>
         <head>
         <title>Hospital Service</title>
         </head>
         <body>
-        <div>
+
         <div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Hospital Service</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
         <a class="nav-link" href="/doctors">Doctors</a>
       </li>
     <li class="nav-item active">
-    <a class="nav-link" href="/visits">Visits</a>
+    <a class="nav-link" href="/visits/1">Visits</a>
     </li>
     <li class="nav-item active">
     <a class="nav-link" href="/diagnosis/1">Diagnosis</a>
@@ -37,23 +37,23 @@
 
         </div>
 
-        </div>
-
-        <h1>Patients</h1>
+        <h1>Visits</h1>
         <div align="center">
         <table class="table">
         <tr>
         <th>ID</th>
+        <th>Status
         <th>Name</th>
-        <th>Surname</th>
-        <th>Email</th>
+        <th>Adress</th>
+        <th></th>
         </tr>
-        <c:forEach items="${listofdoctors}" var="patients">
+        <c:forEach items="${listofvisits}" var="visit" >
             <tr>
-            <td>${patients.id}</td>
-            <td>${patients.firstName}</td>
-            <td>${patients.lastName}</td>
-            <td>${patients.email}</td>
+            <td>${visit.id}</td>
+            <td>${visit.status}</td>
+            <td>${visit.dateOfVisit}</td>
+            <td>${visit.adress}</td>
+            <td><a class="btn btn-primary" href="/" role="button">Choose this visitation</a></td>
             </tr>
         </c:forEach>
         </table>
