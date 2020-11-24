@@ -7,4 +7,6 @@ public interface DiagnosisService {
     void create(Diagnosis diagnosis);
 
     void update(Diagnosis diagnosis);
+
+    Diagnosis showDiagnosisById(Long id);
 }

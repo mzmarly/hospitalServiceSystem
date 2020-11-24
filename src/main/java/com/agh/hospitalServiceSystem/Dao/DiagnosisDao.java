@@ -9,5 +9,5 @@ public interface DiagnosisDao {
 
     void update(Diagnosis diagnosis);
 
-
+    Diagnosis showDiagnosisById(Long id);
 }

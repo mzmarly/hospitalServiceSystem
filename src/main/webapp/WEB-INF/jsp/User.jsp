@@ -9,13 +9,14 @@
     <title>Hospital Service</title>
 </head>
 <body>
-    <div>
-        
+
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Hospital Service</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -24,6 +25,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="/doctors">Doctors</a>
       </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="/visits">Visits</a>
+    </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="/diagnosis/1">Diagnosis</a>
+    </li>
     </ul>
   </div>
 </nav>

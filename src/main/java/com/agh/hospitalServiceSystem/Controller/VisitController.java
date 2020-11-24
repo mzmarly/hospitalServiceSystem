@@ -19,31 +19,38 @@ import com.agh.hospitalServiceSystem.Service.DiagnosisService;
 import com.agh.hospitalServiceSystem.ServiceImpl.DiagnosisServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.agh.hospitalServiceSystem.Service.UserService;
 import com.agh.hospitalServiceSystem.Service.VisitService;
-
+import org.springframework.stereotype.Controller;
 
 /**
  * @author Wiktor
  */
-@RestController
+@Controller
 public class VisitController {
     @Autowired
     private VisitService visitService;
     @Autowired
     private DiagnosisService diagnosisService;
+    @Autowired
+    private UserService userService;
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE, value = "/addVisit/{doctor_id}/{patient_id}")
-    public Long addisit(@RequestBody Visit visit) {
-
+//    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE, value = "/addVisit/{doctor_id}")///{patient_id}
+//    public Long addVisit(@RequestBody Visit visit) {
+//
+//        return visitService.create(visit);
+//    }
+    @PostMapping("/addVisits")
+    public Long addVisit(@RequestBody Visit visit) {
         return visitService.create(visit);
     }
 
-    @GetMapping("/getVisits")
-    public List<Visit> getVisits() {
-        return visitService.getVisits();
-    }
+//    @GetMapping("/getVisits")
+//    public List<Visit> getVisits() {
+//        return visitService.getVisits();
+//    }
 
     @GetMapping("/getVisit/{id}")
     public Visit getVisit(@PathVariable(value = "id") long id) {
@@ -71,6 +78,17 @@ public class VisitController {
         diagnosisService.create(diagnosis);
         visitService.afterVisit(diagnosis, id);
 
+    }
+
+    @GetMapping("/visits")
+    public String getVisits(Model model){
+        model.addAttribute("listofvisits", visitService.getAvaiable());
+        return "visits";
+    }
+
+    @GetMapping("/home")
+    public String nic(Model model){
+        return "home";
     }
 
 

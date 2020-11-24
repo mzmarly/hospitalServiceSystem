@@ -7,9 +7,12 @@ import com.agh.hospitalServiceSystem.Service.DiagnosisService;
 import com.agh.hospitalServiceSystem.Service.UserService;
 import com.agh.hospitalServiceSystem.Service.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+
+@Controller
 public class DiagnosisController {
 
     @Autowired
@@ -26,6 +29,13 @@ public class DiagnosisController {
     @PatchMapping("/updateDiagnosis")
     public void uptadeDiagnosis(@RequestParam Diagnosis diagnosis) {
         diagnosisService.update(diagnosis);
+    }
+
+
+    @GetMapping("/diagnosis/{id}")
+    public String showDiagnosisById(@PathVariable(value = "id") long id,Model model){
+        model.addAttribute("diagnosis", diagnosisService.showDiagnosisById(id));
+        return "diagnosis";
     }
 
 

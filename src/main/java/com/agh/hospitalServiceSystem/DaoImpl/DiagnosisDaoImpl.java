@@ -39,4 +39,9 @@ public class DiagnosisDaoImpl implements DiagnosisDao {
 
     }
 
+    @Override
+    public Diagnosis showDiagnosisById(Long id) {
+        return entityManager.find(Diagnosis.class,id);
+    }
+
 }

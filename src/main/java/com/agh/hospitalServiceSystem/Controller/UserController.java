@@ -44,7 +44,7 @@ public class UserController {
     @GetMapping("/patients")
     public String getPatients(Model model){
         model.addAttribute("listofdoctors", userService.getPatients());
-        return "doctors";
+        return "patients";
     }
     
     @GetMapping("/doctors")

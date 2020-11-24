@@ -46,19 +46,31 @@ public class Visit {
     private User doctor;
 
 
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    @Column
+    private String adress;
 
     public Visit() {
         this.dateOfVisit = null;
         this.patient = null;
         this.doctor = null;
         this.status = null;
+        this.adress=null;
     }
 
-    public Visit(Date dateOfVisit,Status status, User patient, User doctor) {
+    public Visit(Date dateOfVisit,Status status, User patient, User doctor,String adress) {
         this.dateOfVisit = dateOfVisit;
         this.patient = patient;
         this.doctor = doctor;
         this.status = status;
+        this.adress=adress;
     }
 
     public Long getId() {

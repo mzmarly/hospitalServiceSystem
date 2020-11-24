@@ -4,6 +4,7 @@ package com.agh.hospitalServiceSystem.ServiceImpl;
 import com.agh.hospitalServiceSystem.Dao.DiagnosisDao;
 import com.agh.hospitalServiceSystem.Dao.UserDao;
 import com.agh.hospitalServiceSystem.Model.Diagnosis;
+import com.agh.hospitalServiceSystem.Model.User;
 import com.agh.hospitalServiceSystem.Service.DiagnosisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,10 @@ public class DiagnosisServiceImpl implements DiagnosisService {
     @Override
     public void update(Diagnosis diagnosis) {
         diagnosisDao.update(diagnosis);
+    }
+
+    @Override
+    public Diagnosis showDiagnosisById(Long id) {
+        return diagnosisDao.showDiagnosisById(id);
     }
 }

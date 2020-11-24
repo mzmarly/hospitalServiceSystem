@@ -6,8 +6,9 @@
     <title>Hospital Service</title>
 </head>
 <body>
+
     <div>
-        
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Hospital Service</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,27 +22,38 @@
       <li class="nav-item active">
         <a class="nav-link" href="/doctors">Doctors</a>
       </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="/visits">Visits</a>
+    </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="/diagnosis/1">Diagnosis</a>
+    </li>
+
     </ul>
   </div>
 </nav>
-        
+
     </div>
-    <h1>Doctors<h1>
+
+    <h1>Doctors</h1>
         <div align="center">
                 <table class="table">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Specialization</th>
                     </tr>
                     <c:forEach items="${listofdoctors}" var="doctor">
                         <tr>
                             <td>${doctor.id}</td>
                             <td>${doctor.firstName}</td>
                             <td>${doctor.email}</td>
+                            <td>${doctor.specialization}</td>
                         </tr>
                     </c:forEach>
                 </table>
             </div>
+
 </body>
 </html>

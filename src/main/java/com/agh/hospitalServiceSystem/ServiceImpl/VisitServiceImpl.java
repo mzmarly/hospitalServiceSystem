@@ -7,9 +7,10 @@ package com.agh.hospitalServiceSystem.ServiceImpl;
 
 import com.agh.hospitalServiceSystem.Dao.DiagnosisDao;
 import com.agh.hospitalServiceSystem.Dao.VisitDao;
-import com.agh.hospitalServiceSystem.Model.Diagnosis;
-import com.agh.hospitalServiceSystem.Model.Visit;
+import com.agh.hospitalServiceSystem.Model.*;
 import com.agh.hospitalServiceSystem.Service.VisitService;
+
+import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +45,11 @@ public class VisitServiceImpl implements VisitService {
 
     @Override
     public List<Visit> getVisits() {
+
         return visitDao.getVisits();
     }
+
+
 
     @Override
     public void removeVisit(Long id) {
@@ -62,4 +66,17 @@ public class VisitServiceImpl implements VisitService {
         diagnosisDao.create(diagnosis);
         visitDao.afterVisit(diagnosis, id);
     }
-}
+
+    @Override
+    public List<Visit> getAvaiable(){
+        List<Visit> visit=new ArrayList<>();
+        List<Visit> all=visitDao.getVisits();
+        for(Visit u:all){
+            if(u.getStatus().equals(Status.AVAILABLE)){
+                visit.add(u);
+            }
+        }
+        return visit;
+    }
+    }
+

@@ -41,6 +41,11 @@ public class User{
     @Enumerated(STRING)
     private UserType userType;
 
+
+
+    @Enumerated(STRING)
+    private Specialization specialization;
+
     @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL,  fetch = FetchType.EAGER)
     List<Visit> visits=new ArrayList<>();
 
@@ -49,7 +54,13 @@ public class User{
 
 
 
+    public Specialization getSpecialization() {
+        return specialization;
+    }
 
+    public void setSpecialization(Specialization specialization) {
+        this.specialization = specialization;
+    }
     /**
      * @return the id
      */
@@ -159,12 +170,13 @@ public class User{
         this.visit = visit;
     }
 
-    public User(String firstName, String lastName, String email, String password, UserType userType) {
+    public User(String firstName, String lastName, String email, String password, UserType userType,Specialization specialization) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.userType = userType;
+        this.specialization=specialization;
     }
 
     public static User fromId(long id) {
