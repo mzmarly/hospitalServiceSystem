@@ -32,9 +32,15 @@ public class DiagnosisController {
     }
 
 
+//    @GetMapping("/diagnosis/{id}")
+//    public String showDiagnosisById(@PathVariable(value = "id") long id,Model model){
+//        model.addAttribute("diagnosis", diagnosisService.showDiagnosisById(id));
+//        return "diagnosis";
+//    }
+
     @GetMapping("/diagnosis/{id}")
-    public String showDiagnosisById(@PathVariable(value = "id") long id,Model model){
-        model.addAttribute("diagnosis", diagnosisService.showDiagnosisById(id));
+    public String getDiagnosisByUserId(@PathVariable(value = "id") long id,Model model){
+        model.addAttribute("listofDiagnosis", diagnosisService.getDiagnosisByUserId(id));
         return "diagnosis";
     }
 

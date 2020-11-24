@@ -43,13 +43,20 @@
         <th>Recommendations</th>
         <th>Prescription</th>
         </tr>
-            <tr>
-            <td>${diagnosis.id}</td>
-            <td>${diagnosis.disease}</td>
-            <td>${diagnosis.recommendations}</td>
-            <td>${diagnosis.prescription}</td>
-            </tr>
-
+<%--            <tr>--%>
+<%--            <td>${diagnosis.id}</td>--%>
+<%--            <td>${diagnosis.disease}</td>--%>
+<%--            <td>${diagnosis.recommendations}</td>--%>
+<%--            <td>${diagnosis.prescription}</td>--%>
+<%--            </tr>--%>
+            <c:forEach items="${listofDiagnosis}" var="diagnosis">
+                    <tr>
+                    <td>${diagnosis.id}</td>
+                    <td>${diagnosis.disease}</td>
+                    <td>${diagnosis.recommendations}</td>
+                    <td>${diagnosis.prescription}</td>
+                    </tr>
+            </c:forEach>
         </table>
         </div>
 

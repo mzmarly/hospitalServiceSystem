@@ -79,16 +79,16 @@ public class Diagnosis {
     @Column
     private Long doctor;
 
-    public Long getVisit_id() {
-        return visit_id;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setVisit_id(Long visit_id) {
-        this.visit_id = visit_id;
+    public void setUser_id(Long visit_id) {
+        this.user_id = visit_id;
     }
 
     @Column
-    private Long visit_id;
+    private Long user_id;
 }
 
 

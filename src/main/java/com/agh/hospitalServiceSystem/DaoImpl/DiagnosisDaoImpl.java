@@ -40,6 +40,21 @@ public class DiagnosisDaoImpl implements DiagnosisDao {
     }
 
     @Override
+    public List<Diagnosis> getDiagnosis() {
+        List<Diagnosis> diagnosis=new ArrayList();
+        CriteriaBuilder cb=entityManager.getCriteriaBuilder();
+        CriteriaQuery<Diagnosis> cq=cb.createQuery(Diagnosis.class);
+        Root<Diagnosis> rootEntry=cq.from(Diagnosis.class);
+        CriteriaQuery<Diagnosis> all=cq.select(rootEntry);
+
+        TypedQuery<Diagnosis> allQuery=entityManager.createQuery(all);
+        diagnosis.addAll(allQuery.getResultList());
+
+        return diagnosis;
+    }
+
+
+    @Override
     public Diagnosis showDiagnosisById(Long id) {
         return entityManager.find(Diagnosis.class,id);
     }

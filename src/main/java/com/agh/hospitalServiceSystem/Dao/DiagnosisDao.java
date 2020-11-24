@@ -8,6 +8,7 @@ public interface DiagnosisDao {
     void create(Diagnosis diagnosis);
 
     void update(Diagnosis diagnosis);
+    List<Diagnosis> getDiagnosis();
 
     Diagnosis showDiagnosisById(Long id);
 }
