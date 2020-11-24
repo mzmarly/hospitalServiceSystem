@@ -16,8 +16,7 @@ Konto doktora oferuje dodawanie wizyt, przekładanie ich oraz uzupełnianie diag
 
 
 ## Diagram sekwencji
-![screenshot](/sources/diagramSekwencji1.jpg)
-![screenshot](/sources/diagramSekwencji2.jpg)
+![screenshot](/sources/diagramSekwencjiOba.jpg)
 
 ## Aplikacja
 Aplikacja napisana w języku programowania Java.<br />
