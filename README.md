@@ -12,7 +12,7 @@ Konto doktora oferuje dodawanie wizyt, przekładanie ich oraz uzupełnianie diag
 ![screenshot](/sources/useCase.jpg)
 
 ## Diagram klas
-![screenshot](/sources/diagramKlas.jpg)
+![screenshot](/sources/classDiagram.jpg)
 
 
 ## Diagram sekwencji
