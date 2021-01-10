@@ -12,7 +12,7 @@ Konto doktora oferuje dodawanie wizyt, przekładanie ich oraz uzupełnianie diag
 ![screenshot](/sources/useCase.jpg)
 
 ## Diagram klas
-![screenshot](/sources/diagramKlas.jpg)
+![screenshot](/sources/classDiagram.jpg)
 
 
 ## Diagram sekwencji
@@ -20,5 +20,29 @@ Konto doktora oferuje dodawanie wizyt, przekładanie ich oraz uzupełnianie diag
 
 ## Aplikacja
 Aplikacja napisana w języku programowania Java.<br />
-Baza danych oparta na H2 obsługiwana prze hiberneta.<br />
-Aplikacja webowa z frontendem opartym na jsp przy użyciu spring framework. 
+Baza danych oparta na H2 obsługiwana prze Hibernate.<br />
+Aplikacja webowa z frontendem opartym na jsp przy użyciu spring MVC. 
+
+## Wygląd aplikacji
+Okno logowania
+![screenshot](/sources/loginPage.png)
+
+Strona głowa
+![screenshot](/sources/homePage.png)
+
+Lista doktorów
+![screenshot](/sources/doctorsPage.png)
+
+Rezerwacja wizyty u danego doktora
+![screenshot](/sources/setupVisitPage.png)
+
+Zakładka My Account przechowująca informacje o zalogowanym użytkowniku
+![screenshot](/sources/myaccountPage.png)
+
+Zakładka Diagnosis z lista diagnoz wystawionych danemu użytkownikowi
+![screenshot](/sources/userDiagnosisPage.png)
+
+
+
+
+
