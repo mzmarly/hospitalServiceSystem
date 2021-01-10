@@ -25,22 +25,22 @@ Aplikacja webowa z frontendem opartym na jsp przy użyciu spring MVC.
 
 ## Wygląd aplikacji
 Okno logowania
-![screenshot](/sources/loginPage.jpg)
+![screenshot](/sources/loginPage.png)
 
 Strona głowa
-![screenshot](/sources/homePage.jpg)
+![screenshot](/sources/homePage.png)
 
 Lista doktorów
-![screenshot](/sources/doctorsPage.jpg)
+![screenshot](/sources/doctorsPage.png)
 
 Rezerwacja wizyty u danego doktora
-![screenshot](/sources/setupVisitPage.jpg)
+![screenshot](/sources/setupVisitPage.png)
 
 Zakładka My Account przechowująca informacje o zalogowanym użytkowniku
-![screenshot](/sources/myaccountPage.jpg)
+![screenshot](/sources/myaccountPage.png)
 
 Zakładka Diagnosis z lista diagnoz wystawionych danemu użytkownikowi
-![screenshot](/sources/userDiagnosisPage.jpg)
+![screenshot](/sources/userDiagnosisPage.png)
 
 
 
