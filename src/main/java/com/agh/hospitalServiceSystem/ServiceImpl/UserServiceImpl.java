@@ -75,4 +75,17 @@ public class UserServiceImpl implements UserService{
         return patients;
     }
 
+    @Override
+    public User authenticateUser(String email, String password) {
+        User user=null;
+        List<User>users=getUsers();
+        for(User u:users){
+            if(u.getEmail().contains(email) && u.getPassword().contains(password)){
+                user=u;
+            }
+        }
+        return user;
+    }
+    
+
 }

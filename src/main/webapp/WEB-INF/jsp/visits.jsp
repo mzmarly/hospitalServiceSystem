@@ -31,6 +31,9 @@
     <li class="nav-item active">
     <a class="nav-link" href="/users/1">My account</a>
     </li>
+        <li class="nav-item active">
+    <a class="nav-link" href="/logout">Logout</a>
+    </li>
     </ul>
   </div>
 </nav>

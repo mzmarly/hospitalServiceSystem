@@ -27,4 +27,6 @@ public interface UserService {
     List<User> getPatients();
     
     List<User> getDoctors();
+    
+    User authenticateUser(String email,String password);
 }
