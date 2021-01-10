@@ -24,4 +24,25 @@ Baza danych oparta na H2 obsługiwana prze Hibernate.<br />
 Aplikacja webowa z frontendem opartym na jsp przy użyciu spring MVC. 
 
 ## Wygląd aplikacji
+Okno logowania
+![screenshot](/sources/loginPage.jpg)
+
+Strona głowa
+![screenshot](/sources/homePage.jpg)
+
+Lista doktorów
+![screenshot](/sources/doctorsPage.jpg)
+
+Rezerwacja wizyty u danego doktora
+![screenshot](/sources/setupVisitPage.jpg)
+
+Zakładka My Account przechowująca informacje o zalogowanym użytkowniku
+![screenshot](/sources/myaccountPage.jpg)
+
+Zakładka Diagnosis z lista diagnoz wystawionych danemu użytkownikowi
+![screenshot](/sources/userDiagnosisPage.jpg)
+
+
+
+
 
